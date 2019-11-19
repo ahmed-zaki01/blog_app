@@ -8,15 +8,14 @@ class PagesController extends Controller
     public function index()
     {
         $title = 'Home Page';
-        //return view('pages.index', compact('title'));
-        return 'Hello';
+        return view('pages.index', compact('title'));
     }
 
     public function about()
     {
         $title = 'About Page';
-        //return view('pages.index')->>with('title', $title);
-        return 'Hello';
+        return view('pages.about')->with('title', $title);
+
     }
 
     public function services()
@@ -25,7 +24,7 @@ class PagesController extends Controller
             'title' => 'Services Page',
             'services' => ['Web Design', 'Web Develop', 'Testing']
         );
-        //return view('pages.index')->with($data);
-        return 'Hello';
+        return view('pages.services')->with($data);
+
     }
 }

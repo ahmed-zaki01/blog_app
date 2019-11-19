@@ -11,11 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return 'Hello';
-});
-
-//Route::get('/', 'PagesController@index');
+Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 
