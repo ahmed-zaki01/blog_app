@@ -16,6 +16,15 @@
         <small class="text-info">{{$post->created_at}}</small>
     </div>
 </div>
+<div class="row d-flex justify-content-around">
+    <a class="font-weight-bold btn btn-info" href="{{url('/posts/'.$post->id.'/edit')}}">Edit</a>
+    <div>
+        {!! Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST']) !!}
+        {{ Form::hidden('_method', 'DELETE') }}
+        {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+        {!! Form::close() !!}
+    </div>
+</div>
 @else
 <div class="jumbotron">
     <h2 class="text-primary text-center">This post is not found</h2>
