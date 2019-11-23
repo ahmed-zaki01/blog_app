@@ -10,7 +10,7 @@
         <a href="{{url('/posts/'.$post->id)}}">
             <h3 class="text-primary">{{$post->title}}</h3>
         </a>
-        <small class="text-info">{{$post->created_at}}</small>
+        <small class="text-info">{{$post->created_at}}, By {{$post->user->name}}</small>
     </div>
 </div>
 @endforeach
