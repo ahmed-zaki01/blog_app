@@ -16,6 +16,8 @@
         <small class="text-info">{{$post->created_at}}</small>
     </div>
 </div>
+@if(Auth::user())
+@if(Auth::user()->id == $post->user_id)
 <div class="row d-flex justify-content-around">
     <a class="font-weight-bold btn btn-info" href="{{url('/posts/'.$post->id.'/edit')}}">Edit</a>
     <div>
@@ -25,6 +27,8 @@
         {!! Form::close() !!}
     </div>
 </div>
+@endif
+@endif
 @else
 <div class="jumbotron">
     <h2 class="text-primary text-center">This post is not found</h2>
